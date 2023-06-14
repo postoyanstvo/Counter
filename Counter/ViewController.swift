@@ -72,14 +72,15 @@ class ViewController: UIViewController {
     // Actions with bottons
     @IBAction func addOneToCounter(_ sender: Any) {
         // Increase counter value by 1 and show value by label
+        scrollTextViewToBottom(textView: textView)
         counterValue += 1
         countLabel.text = "Значение счётчика: \(counterValue)"
         textView.text += "\(currentDateTimeStamp): значение изменено на +1" + "\n"
-        scrollTextViewToBottom(textView: textView)
     }
     
     @IBAction func deductOneFromCounter(_ sender: Any) {
         // Decrease counter value by 1 and show value by label
+        scrollTextViewToBottom(textView: textView)
         if counterValue > 0 {
             counterValue -= 1
             countLabel.text = "Значение счётчика: \(counterValue)"
@@ -87,15 +88,14 @@ class ViewController: UIViewController {
         } else {
             textView.text += "\(currentDateTimeStamp): попытка уменьшить значение счётчика ниже 0" + "\n"
         }
-        scrollTextViewToBottom(textView: textView)
     }
     
     @IBAction func resetCounter(_ sender: Any) {
         // Reset counter and show value by label
+        scrollTextViewToBottom(textView: textView)
         counterValue = 0
         countLabel.text = "0"
         textView.text += "\(currentDateTimeStamp): значение сброшено" + "\n"
-        scrollTextViewToBottom(textView: textView)
     }
 }
 
