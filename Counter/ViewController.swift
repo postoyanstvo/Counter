@@ -61,7 +61,7 @@ class ViewController: UIViewController {
     }
     
     // Scroll text in textView if added new line
-    func scrollTextViewToBottom(textView: UITextView) {
+    private func scrollTextViewToBottom(textView: UITextView) {
         if textView.text.count > 0 {
             let location = textView.text.count - 1
             let bottom = NSMakeRange(location, 1)
